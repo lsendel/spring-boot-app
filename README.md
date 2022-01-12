@@ -4,6 +4,15 @@
 * Wiki: https://sunitc.dev/2019/08/15/adding-basic-authentication-authorization-to-spring-boot/
 * Git Repo: https://github.com/chatterjeesunit/spring-boot-app
 
+ALso look at:
+
+
+https://www.javainuse.com/spring/spring-boot-oauth-introduction
+
+
+https://www.javainuse.com/spring/spring-boot-oauth-authorization-code
+https://www.javainuse.com/spring/spring-boot-oauth-access-token
+
 ## Releases.
  * with few basic CRUD REST APIs - [Git Tag V1.1](https://github.com/chatterjeesunit/spring-boot-app/tree/v1.1)
  * with Flyway integration for Database migration - [Git Tag V2.0](https://github.com/chatterjeesunit/spring-boot-app/tree/v2.0)
