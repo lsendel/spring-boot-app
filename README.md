@@ -1,5 +1,9 @@
 # Sample Spring Boot project 
 
+#This code was taken from (Sunit Chatterjee)
+* Wiki: https://sunitc.dev/2019/08/15/adding-basic-authentication-authorization-to-spring-boot/
+* Git Repo: https://github.com/chatterjeesunit/spring-boot-app
+
 ## Releases.
  * with few basic CRUD REST APIs - [Git Tag V1.1](https://github.com/chatterjeesunit/spring-boot-app/tree/v1.1)
  * with Flyway integration for Database migration - [Git Tag V2.0](https://github.com/chatterjeesunit/spring-boot-app/tree/v2.0)
@@ -26,6 +30,37 @@ For more detailed step by step guide on how to build this app, please refer to t
 
  
 ## Creating Dummy Data
+ * My SQL  Script:
+ 
+create table users(
+username varchar(50) not null primary key, 
+password varchar(500) not null,
+enabled boolean not null);
+
+create table authorities (
+username varchar(50) not null,
+authority varchar(50) not null,
+constraint fk_authorities_users foreign key(username) references users(username));
+
+create unique index ix_auth_username on authorities (username,authority);
+
+
+INSERT INTO `users` (`username`, `password`, `enabled`)
+VALUES ('admin01', '{noop}admin01@123#', true);
+
+INSERT INTO `users` (`username`, `password`, `enabled`)
+VALUES ('user01', '{noop}welcome@123#', true);
+
+
+INSERT INTO `authorities` (`username`, `authority`)
+VALUES ('admin01', 'ROLE_ADMIN');
+
+INSERT INTO `authorities` (`username`, `authority`)
+VALUES ('user01', 'ROLE_USER');
+
+commit;
+
+
  * Run SQL Script - `scripts/Create_Dummy_Data.sql`
  
  

@@ -30,17 +30,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	implementation "org.flywaydb:flyway-core:6.5.5"
-	runtime 'mysql:mysql-connector-java:8.0.20'
+	implementation 'mysql:mysql-connector-java:8.0.20'
 	implementation 'javax.xml.bind:jaxb-api:2.3.0'
 	compileOnly 'org.projectlombok:lombok:1.18.12'
 	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
 
-	compile('org.hibernate:hibernate-envers')
+	implementation('org.hibernate:hibernate-envers')
 
+
+	//implementation('io.jsonwebtoken:jjwt:0.2')
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
-	runtime 'io.jsonwebtoken:jjwt-impl:0.11.2'
-	runtime 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+
+
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+	//runtime 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	//runtime 'io.jsonwebtoken:jjwt-jackson:0.11.2'
 	// Uncomment the next line if you want to use RSASSA-PSS (PS256, PS384, PS512) algorithms:
 	//runtime 'org.bouncycastle:bcprov-jdk15on:1.60'
 	// Uncomment below line if you want to use gson
@@ -48,7 +54,7 @@ dependencies {
 
 	implementation group: 'com.hazelcast', name: 'hazelcast-all', version: '4.0.2'
 
-	testCompile('org.springframework.boot:spring-boot-starter-test') {
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'org.springframework.security:spring-security-test'
